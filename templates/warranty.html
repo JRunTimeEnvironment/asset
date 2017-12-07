@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block main %}
+     <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">维保清单</div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true" >id</th>
+                            <th data-field="price" data-sortable="true">序号</th>
+                            <th data-field="id" data-sortable="true">SN序列号</th>
+                            <th data-field="name"  data-sortable="true">IP地址</th>
+                            <th>业务系统</th>
+                            <th>设备类型</th>
+                            <th>项目名称</th>
+                            <th>维保厂商联系人</th>
+                            <th>转维联系人</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for warranty in WarrantyDeviceList %}
+                        <tr>
+                            <td>1</td>
+                            <td>{{ warranty.uid }}</td>
+                            <td>{{ warranty.sn_number }}</td>
+                            <td>{{ warranty.ip }}</td>
+                            <td>{{ warranty.business }}</td>
+                            <td>{{ warranty.equi_type }}</td>
+                            <td>{{ warranty.project_name }}</td>
+                            <td>{{ warranty.contacts }}</td>
+                            <td>{{ warranty.turn_contacts }}</td>
+                        </tr>
+                            {% empty %}
+                            None
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+{% endblock main %}

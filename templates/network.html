@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block main %}
+     <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">san交换机清单</div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true" >id</th>
+                            <th >序号</th>
+                            <th data-field="price" data-sortable="true">SN序列号</th>
+                            <th data-field="id" data-sortable="true">固件版本</th>
+                            <th data-field="name"  data-sortable="true">登录方式</th>
+                            <th>移动资产标签</th>
+                            <th>设备位置</th>
+                            <th>维保类型</th>
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for network in NetworkDeviceList %}
+                        <tr>
+                            <td></td>
+                            <td>{{ network.uid }}</td>
+                            <td>{{ network.sn_number }}</td>
+                            <td>{{ network.version }}</td>
+                            <td>{{ network.login }}</td>
+                            <td>{{ network.mobile_tag }}</td>
+                            <td>{{ network.device_location }}</td>
+                            <td>{{ network.type }}</td>
+                        </tr>
+                            {% empty %}
+                            None
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+{% endblock main %}

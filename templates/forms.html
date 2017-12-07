@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block main %}
+    <i class="iconfont icon-excel"></i><a href="{% url 'switch:downloadfroms' %}">下载文件</a>
+     <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">主键表</div>
+                <div class="panel-body">
+                    <table data-toggle="table"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true" >id</th>
+                            <th data-field="price" data-sortable="true">id</th>
+                            <th data-field="id" data-sortable="true">名字</th>
+                            <th data-field="name"  data-sortable="true">SN序列号</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for mesterdevice in MesterDeviceList %}
+                        <tr>
+                            <td>1</td>
+                            <td>{{ mesterdevice.uid }}</td>
+                            <td>{{ mesterdevice.name }}</td>
+                            <td>{{ mesterdevice.sn_number }}</td>
+                        </tr>
+                            {% empty %}
+                            None
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+{% endblock main %}

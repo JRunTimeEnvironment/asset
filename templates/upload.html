@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block main %}
+    <div style="position: relative;width: 100px;height: 50px;">
+        <input class="file" type="file" id="fafafa" name="afafaf" />
+        <a class="upload">选择文件</a>
+    </div>
+    <input type="button" value="提交" onclick="jqSubmit();" />
+{% endblock main %}
+{% block scripta %}
+    function jqSubmit(){
+
+    var file_obj = document.getElementById('fafafa').files[0];
+
+    var fd = new FormData();
+    fd.append('username','root');
+    fd.append('fafafa',file_obj);
+    alert('提交成功！');
+    $.ajax({
+        url: '/upload_file/',
+        type: 'POST',
+        data: fd,
+        processData: false,
+        contentType: false,
+        success:function(arg,a1,a2){
+            console.log(arg);
+            console.log(a1);
+            console.log(a2);
+        }
+    })
+   }
+
+{% endblock scripta %}
