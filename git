@@ -24,3 +24,4 @@ git pull 远程仓库名 master 将远程仓库东西拿下来
 
 git push -u 远程仓库名 master (-f) 将本地仓库push 到远程 (强制push)
 
+this is test
