@@ -1,0 +1,26 @@
+git add 添加到暂存区
+
+git commit -m "description" 提交到工作区,一定要加 -m "描述"
+
+git status 查看状态
+
+git diff 查看差异-->当工作区和版本库有差异时才输出
+
+git log 查看日志
+
+git reflog 查看更改日志
+
+git reset --hard HEAD^ 版本库回退到上一个版本 
+
+git reset --hard HEAD~n 版本库回退到上n个版本
+
+git reset --hard commit_id 版本库回退到commit_id指向的版本
+
+git checkout -- file 工作区文件回到最近一次git add或者git commit的状态
+
+git checkout HEAD file 暂存区文件修改撤销，重新放回工作区
+
+git pull 远程仓库名 master 将远程仓库东西拿下来
+
+git push -u 远程仓库名 master (-f) 将本地仓库push 到远程 (强制push)
+
