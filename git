@@ -26,4 +26,8 @@ git push -u 远程仓库名 master (-f) 将本地仓库push 到远程 (强制pus
 
 this is test
 
-test wrong
+<<<<<<< HEAD
+test branch
+=======
+test branch
+>>>>>>> test
